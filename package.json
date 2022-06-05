@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@types/node": "^17.0.40",
+    "discord.js": "^13.7.0",
+    "typescript": "^4.7.3"
+  },
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "Leo makes a discord bot",
+  "main": "src/index.ts",
+  "author": "Leo"
+}
