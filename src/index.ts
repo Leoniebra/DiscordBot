@@ -6,7 +6,7 @@ const client = new Discord.Client({intents: ["GUILDS", "GUILD_MESSAGES"]});
 const messageHandler = new MessageHandler();
 
 client.on("messageCreate", function(message) { 
-    messageHandler.handle(message);                         
+    messageHandler.handle(message);                     
 }); 
 
 client.login(config.BOT_TOKEN);
