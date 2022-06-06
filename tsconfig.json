@@ -1,0 +1,21 @@
+{
+   "compilerOptions": {
+      "lib": [
+         "es5",
+         "es6"
+      ],
+      "target": "es5",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "./build",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "baseUrl": ".", // This must be specified if "paths" is.
+      "paths": {
+         "DiscordUserRepository": ["./Domain/Repository/DiscordUserRepository"],
+         "DiscordUser": ["./Domain/Model/DiscordUser"], // This mapping is relative to "baseUrl"
+      }
+   }
+
+}

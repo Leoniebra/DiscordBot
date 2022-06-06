@@ -11,7 +11,6 @@ export class DiscordUserRepository {
     async create(user: DiscordUser): Promise<void> {
         await this.prisma.user.create({
             data: {
-                uid: user.Uid,
                 name: user.Name,
                 identifier: user.Identifier,
             }
