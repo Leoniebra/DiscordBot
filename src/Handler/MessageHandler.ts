@@ -1,6 +1,7 @@
 import { Message, UserManager } from 'discord.js';
 import { DiscordUser } from './../Domain/Model/DiscordUser';
 import { DiscordUserRepository } from './../Domain/Repository/DiscordUserRepository';
+import { WhoAmICommand } from './../Command/WhoAmICommand';
 
 export class MessageHandler {
     
@@ -10,14 +11,13 @@ export class MessageHandler {
         if(message.author.bot)
         {
             return;
-        }         
-        const userRepository = new DiscordUserRepository();
-        let discordUser = new DiscordUser();
-        discordUser.Name = message.author.username;
-        discordUser.Identifier = parseInt(message.author.discriminator);
-        await userRepository.create(discordUser);
-        const result = await userRepository.findAll();
-        console.log(result);
-        message.reply("Yo!");
+        }
+        
+        if(message.content.toLowerCase() == "!whoami")
+        {
+            const command = new WhoAmICommand();
+            await command.execute(message);
+        }
     }
+
 }
